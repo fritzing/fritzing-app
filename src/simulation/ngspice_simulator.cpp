@@ -128,7 +128,12 @@ bool NgSpiceSimulator::init()
 	std::vector<std::string> symbols{STRFY(ngSpice_Command), STRFY(ngSpice_Init), STRFY(ngSpice_Circ), STRFY(ngGet_Vec_Info),
 									 STRFY(ngSpice_SetBkpt), STRFY(ngSpice_Init_Sync), STRFY(ngSpice_CurPlot), STRFY(ngSpice_AllPlots), STRFY(ngSpice_AllVecs)};
 	for (auto & symbol: symbols) {
-		m_handles[symbol] = (void *) m_library.resolve(symbol.c_str());
+		void * resolvedSymbol = (void *) m_library.resolve(symbol.c_str());
+		if (!resolvedSymbol) {
+			DebugDialog::debug(QString("Error resolving ngspice symbol: %1 from %2").arg(QString::fromStdString(symbol), m_library.fileName()));
+			throw std::runtime_error("Error resolving ngspice symbol: " + symbol + " from " + m_library.fileName().toStdString());
+		}
+		m_handles[symbol] = resolvedSymbol;
 	}
 
 	if (localeconv()->decimal_point[0] != '.') {

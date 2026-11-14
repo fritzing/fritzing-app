@@ -188,291 +188,311 @@ void Simulator::simulate() {
 		return;
 	}
 
-	m_simulator = NgSpiceSimulator::getInstance();
-	bool simInitOK;
 	try {
-		simInitOK = m_simulator->init();
-	}
-	catch (std::exception& e) {
-		FMessageBox::warning(nullptr, tr("Simulator Error", "dialog title"), tr("An error occurred when starting the simulation."));
-		stopSimulation();
-		return;
-	}
-
-	if( !m_simulator )
-	{
-		throw std::runtime_error( "Could not create simulator instance" );
-		return;
-	}
-
-	if (!simInitOK) {
-		FMessageBox::warning(nullptr, tr("Unable to load the NgSpice library"), tr("Fritzing could not load the ngspice library (not found or wrong version). "
-																			   "This is usually a problem found in third party binaries. Please, use the "
-																			   "official binary or notify the mantainers of the packaging."));
-		stopSimulation();
-		return;
-	}
-
-	//Empty the stderr and stdout buffers
-	m_simulator->clearLog();
-
-	QList< QList<ConnectorItem *>* > netList;
-	QSet<ItemBase *> rawItemBases;
-	m_spiceNetlist = m_mainWindow->getSpiceNetlist("Simulator Netlist", netList, rawItemBases);
-	m_itemBases.clear();
-	for (ItemBase * it : rawItemBases) m_itemBases.append(it);
-
-	//TODO: Fix this in the parts
-	m_spiceNetlist.replace("IC=0", "");
-
-	//Select the type of analysis based on if there is an oscilloscope in the simulation
-	m_simEndTime = -1, m_simStartTime = std::numeric_limits<double>::max();;
-	foreach (ItemBase * item, rawItemBases) {
-		if(item->family().toLower().contains("oscilloscope")) {
-			//TODO: Use TextUtils::convertFromPowerPrefixU function
-			double time_div = TextUtils::convertFromPowerPrefix(item->getProperty("time/div"), "s");
-			double pos = TextUtils::convertFromPowerPrefix(item->getProperty("horizontal position"), "s");
-			DebugDialog::stream() << "Found oscilloscope: time/div: " << item->getProperty("time/div").toStdString() << " " << time_div << item->getProperty("horizontal position").toStdString() << " " << pos;
-			if (pos < m_simStartTime) {
-				m_simStartTime = pos;
-			}
-			double maxSimTimeOsc = pos + time_div * 10;
-			if (maxSimTimeOsc > m_simEndTime) {
-				m_simEndTime = maxSimTimeOsc;
-			}
+		m_simulator = NgSpiceSimulator::getInstance();
+		bool simInitOK = false;
+		try {
+			simInitOK = m_simulator ? m_simulator->init() : false;
 		}
-	}
-
-	if (m_simEndTime <= 0 && m_transientSimulationEnabled) {
-		m_simStartTime = 0;
-		m_simEndTime = 10;
-	}
-
-	//Read the project properties
-	QString timeStepModeStr = m_mainWindow->getProjectProperties()->getProjectProperty(ProjectPropertyKeySimulatorTimeStepMode);
-	QString numStepsStr = m_mainWindow->getProjectProperties()->getProjectProperty(ProjectPropertyKeySimulatorNumberOfSteps);
-	QString timeStepStr = m_mainWindow->getProjectProperties()->getProjectProperty(ProjectPropertyKeySimulatorTimeStepS);
-	QString animationTimeStr = m_mainWindow->getProjectProperties()->getProjectProperty(ProjectPropertyKeySimulatorAnimationTimeS);
-	QString spiceOptionsStr = m_mainWindow->getProjectProperties()->getProjectProperty(ProjectPropertyKeySimulatorSpiceOptions);
-
-	//Add spice options to the netlist
-	m_spiceNetlist.replace(".OP", spiceOptionsStr.append("\n.OP"));
-
-	DebugDialog::stream() << "timeStepModeStr: " << timeStepModeStr.toStdString() << ", numStepsStr: "
-						  << numStepsStr.toStdString() << ", timeStepStr: " << timeStepStr.toStdString()
-						  << ", animationTimeStr: " << animationTimeStr.toStdString();
-	bool doTransientSimulation = m_transientSimulationEnabled && m_mainWindow->isTransientSimulationEnabled();
-	if (doTransientSimulation) {
-		if (timeStepModeStr.contains("true", Qt::CaseInsensitive)) {
-			m_simStepTime = TextUtils::convertFromPowerPrefixU(timeStepStr, "s");
-			m_simNumberOfSteps = (m_simEndTime-m_simStartTime)/m_simStepTime;
-		} else {
-			m_simNumberOfSteps = TextUtils::convertFromPowerPrefixU(numStepsStr, "");
-			m_simStepTime = (m_simEndTime-m_simStartTime)/m_simNumberOfSteps;
+		catch (std::exception& e) {
+			DebugDialog::stream() << "Exception during simulator init(): " << e.what();
+			FMessageBox::warning(nullptr, tr("Simulator Error", "dialog title"), tr("An error occurred when starting the simulation:\n%1").arg(e.what()));
+			stopSimulation();
+			return;
 		}
 
-		m_showResultsTimerInterval = TextUtils::convertFromPowerPrefixU(animationTimeStr, "s")/m_simNumberOfSteps*1000;
-		//A negative animation times, means real time
-		if (m_showResultsTimerInterval < 0)
-			m_showResultsTimerInterval = (m_simEndTime-m_simStartTime)/m_simNumberOfSteps*1000;
-		DebugDialog::stream() << "Animation timerInterval: " << m_showResultsTimerInterval;
-		m_showResultsTimer->setInterval(m_showResultsTimerInterval);
-		if (m_showResultsTimerInterval < 10) {
-			//Do not block Fritzing with calls to animate the results. Leave some time to ngSpice. 100Hz for the rendering is OK.
-			m_showResultsTimer->setInterval(10);
+		if (!m_simulator) {
+			FMessageBox::warning(nullptr, tr("Simulator Error", "dialog title"), tr("Could not create simulator instance."));
+			stopSimulation();
+			return;
 		}
 
-		//If the circuit is modified while we were already simulating the circuit,
-		//We start a new simulation from that point
-		QString initConditions="", useIC="";
-		double startTimePartialSim = m_simStartTime;
-		double endTimePartialSim = m_simEndTime;
-		if(m_showResultsTimer->isActive()) {
-			m_interactionStep = (unsigned long) (m_elapsedSimTotalTimer.elapsed()/ m_showResultsTimerInterval) + 1;
-			if (m_interactionStep > m_simNumberOfSteps)
-				return;
+		if (!simInitOK) {
+			FMessageBox::warning(nullptr, tr("Unable to load the NgSpice library"), tr("Fritzing could not load the ngspice library (not found or wrong version). "
+																				   "This is usually a problem found in third party binaries. Please, use the "
+																				   "official binary or notify the mantainers of the packaging."));
+			stopSimulation();
+			return;
+		}
 
-			DebugDialog::stream() << "INTERACTION! interactionStep: " <<m_interactionStep;
-			endTimePartialSim -= (m_interactionStep - 1) * m_simStepTime;
-			startTimePartialSim = 0;
+		//Empty the stderr and stdout buffers
+		m_simulator->clearLog();
 
-			//Wait in case ngspice has not finished calculating that time
-			//TODO: Add a timeout
-			while ((m_simulator->getVecInfo(QString("time").toStdString()).size() + m_previousInteractionStep) < m_interactionStep) ;
+		QList< QList<ConnectorItem *>* > netList;
+		QSet<ItemBase *> rawItemBases;
+		m_spiceNetlist = m_mainWindow->getSpiceNetlist("Simulator Netlist", netList, rawItemBases);
+		m_itemBases.clear();
+		for (ItemBase * it : rawItemBases) m_itemBases.append(it);
 
-			m_simulator->command("bg_halt");
+		//TODO: Fix this in the parts
+		m_spiceNetlist.replace("IC=0", "");
 
-			//Save previous voltages and prepare init conditions
-			initConditions.append(".ic ");
-			auto vecs = m_simulator->getAllVecs(m_simulator->getCurrPlot().toStdString());
-			for (QString vec: vecs) {
-				//Do not use saved currents from components (@r1[i]) or currents from voltage sources (vcc1#branch)
-				if(vec.toLower().startsWith("v") && !vec.toLower().contains("branch")){
-					//This is a voltage node
-
-					//Get the values from this part of the simulation, crop them and add prevous ones
-					auto vecPartialValues = m_simulator->getVecInfo(vec.toStdString());
-					vecPartialValues.resize(m_interactionStep);
-					auto vevAllValues = m_previousVoltages.value(vec);
-					vevAllValues.insert(vevAllValues.end(), vecPartialValues.begin(), vecPartialValues.end());
-
-					m_previousVoltages.insert(vec.toLower(), vevAllValues);
-					DebugDialog::stream() << "Storing previous voltages. vevAllValues size: " << vevAllValues.size();
-					double val = vecPartialValues[m_interactionStep - 1];
-					DebugDialog::stream() << vec << ": " << val;
-					//TODO: DO NOT LOOSE PRECISION
-					QString ic = QString("%1=%2 ").arg(vec).arg(QString::number(val, 'f', 8));
-					initConditions.append(ic);
+		//Select the type of analysis based on if there is an oscilloscope in the simulation
+		m_simEndTime = -1, m_simStartTime = std::numeric_limits<double>::max();;
+		foreach (ItemBase * item, rawItemBases) {
+			if(item->family().toLower().contains("oscilloscope")) {
+				//TODO: Use TextUtils::convertFromPowerPrefixU function
+				double time_div = TextUtils::convertFromPowerPrefix(item->getProperty("time/div"), "s");
+				double pos = TextUtils::convertFromPowerPrefix(item->getProperty("horizontal position"), "s");
+				DebugDialog::stream() << "Found oscilloscope: time/div: " << item->getProperty("time/div").toStdString() << " " << time_div << item->getProperty("horizontal position").toStdString() << " " << pos;
+				if (pos < m_simStartTime) {
+					m_simStartTime = pos;
+				}
+				double maxSimTimeOsc = pos + time_div * 10;
+				if (maxSimTimeOsc > m_simEndTime) {
+					m_simEndTime = maxSimTimeOsc;
 				}
 			}
-			initConditions.append("\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
-			useIC = "UIC";
-			DebugDialog::stream() << "initConditions: " << initConditions;
-			m_previousInteractionStep = m_interactionStep;
-
-		} else {
-			//This is the start of a simulation
-			m_previousInteractionStep = 0;
-			m_interactionStep = 0;
-			m_previousVoltages.clear();
 		}
 
-		QString tranAnalysis = QString("%1.TRAN %2 %3 %4 %5").arg(initConditions).arg(m_simStepTime).arg(endTimePartialSim).arg(startTimePartialSim).arg(useIC);
-		m_spiceNetlist.replace(".OP", tranAnalysis);
-	}
-
-	m_simulator->clearLog();
-	DebugDialog::stream() << "Netlist: " << m_spiceNetlist.toStdString();
-	DebugDialog::stream() << "Running command(remcirc):";
-	m_simulator->command("remcirc");
-	DebugDialog::stream() << "Running m_simulator->command('reset'):";
-	m_simulator->command("reset");
-	m_simulator->clearLog();
-	// DebugDialog::stream() << "Loading codemodel analog.cm, which should be in the CWD:";
-	// m_simulator->command("codemodel ./usr/lib/ngspice/analog.cm");
-
-	DebugDialog::stream() << "-----------------------------------";
-	DebugDialog::stream() << "Running LoadNetlist:";
-	m_simulator->loadCircuit(m_spiceNetlist.toStdString());
-
-	if (QString::fromStdString(m_simulator->getLog(false)).toLower().contains("error") || // "error on line"
-		QString::fromStdString(m_simulator->getLog(true)).toLower().contains("warning")) { // "warning, can't find model"
-		//Ngspice found an error, do not continue
-		QString errorHint = tr("The simulator gave an error when loading the netlist. "
-							   "Probably some SPICE field is wrong, please, check them.\n"
-							   "If the parts are from the simulation bin, report the bug in GitHub.");
-		showSimulatorError(nullptr, errorHint, m_spiceNetlist, m_simulator);
-		stopSimulation();
-		return;
-	}
-	DebugDialog::stream() << "-----------------------------------";
-	DebugDialog::stream() << "Running command(listing):";
-	m_simulator->command("listing");
-	DebugDialog::stream() << "-----------------------------------";
-	DebugDialog::stream() << "Running m_simulator->command(bg_run):";
-	m_simulator->resetIsBGThreadRunning();
-	m_elapsedAnimationTimer.start();
-	if(!m_showResultsTimer->isActive())
-		m_elapsedSimTotalTimer.start();
-	m_simulator->command("bg_run");
-	DebugDialog::stream() << "-----------------------------------";
-	DebugDialog::stream() << "Generating a hash table to find the net of specific connectors:";
-	//While the spice simulator runs, we will perform some tasks:
-
-	//Generate a hash table to find the net of specific connectors
-	DebugDialog::stream() << "Generate a hash table to find the net of specific connectors";
-	m_connector2netHash.clear();
-	for (int i=0; i<netList.size(); i++) {
-		QList<ConnectorItem *> * net = netList.at(i);
-		foreach (ConnectorItem * ci, *net) {
-			m_connector2netHash.insert(ci, i);
+		if (m_simEndTime <= 0 && m_transientSimulationEnabled) {
+			m_simStartTime = 0;
+			m_simEndTime = 10;
 		}
-	}
-	DebugDialog::stream() << "-----------------------------------";
-	DebugDialog::stream() << "Generating a hash table to find the breadboard parts from parts in the schematic view:";
 
-	//Generate a hash table to find the breadboard parts from parts in the schematic view
-	DebugDialog::stream() << "Generate a hash table to find the breadboard parts from parts in the schematic view";
-	m_sch2bbItemHash.clear();
-	foreach (ItemBase* schPart, rawItemBases) {
-		foreach (QGraphicsItem * bbItem, m_breadboardGraphicsView->scene()->items()) {
-			ItemBase * bbPart = dynamic_cast<ItemBase *>(bbItem);
-			if (!bbPart) continue;
-			if (schPart->id() == bbPart->id()) {
-				m_sch2bbItemHash.insert(schPart, bbPart);
+		//Read the project properties
+		QString timeStepModeStr = m_mainWindow->getProjectProperties()->getProjectProperty(ProjectPropertyKeySimulatorTimeStepMode);
+		QString numStepsStr = m_mainWindow->getProjectProperties()->getProjectProperty(ProjectPropertyKeySimulatorNumberOfSteps);
+		QString timeStepStr = m_mainWindow->getProjectProperties()->getProjectProperty(ProjectPropertyKeySimulatorTimeStepS);
+		QString animationTimeStr = m_mainWindow->getProjectProperties()->getProjectProperty(ProjectPropertyKeySimulatorAnimationTimeS);
+		QString spiceOptionsStr = m_mainWindow->getProjectProperties()->getProjectProperty(ProjectPropertyKeySimulatorSpiceOptions);
+
+		//Add spice options to the netlist
+		m_spiceNetlist.replace(".OP", spiceOptionsStr.append("\n.OP"));
+
+		DebugDialog::stream() << "timeStepModeStr: " << timeStepModeStr.toStdString() << ", numStepsStr: "
+							  << numStepsStr.toStdString() << ", timeStepStr: " << timeStepStr.toStdString()
+							  << ", animationTimeStr: " << animationTimeStr.toStdString();
+		bool doTransientSimulation = m_transientSimulationEnabled && m_mainWindow->isTransientSimulationEnabled();
+		if (doTransientSimulation) {
+			if (timeStepModeStr.contains("true", Qt::CaseInsensitive)) {
+				m_simStepTime = TextUtils::convertFromPowerPrefixU(timeStepStr, "s");
+				m_simNumberOfSteps = (m_simEndTime-m_simStartTime)/m_simStepTime;
+			} else {
+				m_simNumberOfSteps = TextUtils::convertFromPowerPrefixU(numStepsStr, "");
+				m_simStepTime = (m_simEndTime-m_simStartTime)/m_simNumberOfSteps;
+			}
+
+			m_showResultsTimerInterval = TextUtils::convertFromPowerPrefixU(animationTimeStr, "s")/m_simNumberOfSteps*1000;
+			//A negative animation times, means real time
+			if (m_showResultsTimerInterval < 0)
+				m_showResultsTimerInterval = (m_simEndTime-m_simStartTime)/m_simNumberOfSteps*1000;
+			DebugDialog::stream() << "Animation timerInterval: " << m_showResultsTimerInterval;
+			m_showResultsTimer->setInterval(m_showResultsTimerInterval);
+			if (m_showResultsTimerInterval < 10) {
+				//Do not block Fritzing with calls to animate the results. Leave some time to ngSpice. 100Hz for the rendering is OK.
+				m_showResultsTimer->setInterval(10);
+			}
+
+			//If the circuit is modified while we were already simulating the circuit,
+			//We start a new simulation from that point
+			QString initConditions="", useIC="";
+			double startTimePartialSim = m_simStartTime;
+			double endTimePartialSim = m_simEndTime;
+			if(m_showResultsTimer->isActive()) {
+				m_interactionStep = (unsigned long) (m_elapsedSimTotalTimer.elapsed()/ m_showResultsTimerInterval) + 1;
+				if (m_interactionStep > m_simNumberOfSteps)
+					return;
+
+				DebugDialog::stream() << "INTERACTION! interactionStep: " <<m_interactionStep;
+				endTimePartialSim -= (m_interactionStep - 1) * m_simStepTime;
+				startTimePartialSim = 0;
+
+				//Wait in case ngspice has not finished calculating that time
+				//TODO: Add a timeout
+				while ((m_simulator->getVecInfo(QString("time").toStdString()).size() + m_previousInteractionStep) < m_interactionStep) ;
+
+				m_simulator->command("bg_halt");
+
+				//Save previous voltages and prepare init conditions
+				initConditions.append(".ic ");
+				auto vecs = m_simulator->getAllVecs(m_simulator->getCurrPlot().toStdString());
+				for (QString vec: vecs) {
+					//Do not use saved currents from components (@r1[i]) or currents from voltage sources (vcc1#branch)
+					if(vec.toLower().startsWith("v") && !vec.toLower().contains("branch")){
+						//This is a voltage node
+
+						//Get the values from this part of the simulation, crop them and add prevous ones
+						auto vecPartialValues = m_simulator->getVecInfo(vec.toStdString());
+						vecPartialValues.resize(m_interactionStep);
+						auto vevAllValues = m_previousVoltages.value(vec);
+						vevAllValues.insert(vevAllValues.end(), vecPartialValues.begin(), vecPartialValues.end());
+
+						m_previousVoltages.insert(vec.toLower(), vevAllValues);
+						DebugDialog::stream() << "Storing previous voltages. vevAllValues size: " << vevAllValues.size();
+						double val = vecPartialValues[m_interactionStep - 1];
+						DebugDialog::stream() << vec << ": " << val;
+						//TODO: DO NOT LOOSE PRECISION
+						QString ic = QString("%1=%2 ").arg(vec).arg(QString::number(val, 'f', 8));
+						initConditions.append(ic);
+					}
+				}
+				initConditions.append("\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+				useIC = "UIC";
+				DebugDialog::stream() << "initConditions: " << initConditions;
+				m_previousInteractionStep = m_interactionStep;
+
+			} else {
+				//This is the start of a simulation
+				m_previousInteractionStep = 0;
+				m_interactionStep = 0;
+				m_previousVoltages.clear();
+			}
+
+			QString tranAnalysis = QString("%1.TRAN %2 %3 %4 %5").arg(initConditions).arg(m_simStepTime).arg(endTimePartialSim).arg(startTimePartialSim).arg(useIC);
+			m_spiceNetlist.replace(".OP", tranAnalysis);
+		}
+
+		m_simulator->clearLog();
+		DebugDialog::stream() << "Netlist: " << m_spiceNetlist.toStdString();
+		DebugDialog::stream() << "Running command(remcirc):";
+		m_simulator->command("remcirc");
+		DebugDialog::stream() << "Running m_simulator->command('reset'):";
+		m_simulator->command("reset");
+		m_simulator->clearLog();
+		// DebugDialog::stream() << "Loading codemodel analog.cm, which should be in the CWD:";
+		// m_simulator->command("codemodel ./usr/lib/ngspice/analog.cm");
+
+		DebugDialog::stream() << "-----------------------------------";
+		DebugDialog::stream() << "Running LoadNetlist:";
+		m_simulator->loadCircuit(m_spiceNetlist.toStdString());
+
+		if (QString::fromStdString(m_simulator->getLog(false)).toLower().contains("error") || // "error on line"
+			QString::fromStdString(m_simulator->getLog(true)).toLower().contains("warning")) { // "warning, can't find model"
+			//Ngspice found an error, do not continue
+			QString errorHint = tr("The simulator gave an error when loading the netlist. "
+								   "Probably some SPICE field is wrong, please, check them.\n"
+								   "If the parts are from the simulation bin, report the bug in GitHub.");
+			showSimulatorError(nullptr, errorHint, m_spiceNetlist, m_simulator);
+			stopSimulation();
+			return;
+		}
+		DebugDialog::stream() << "-----------------------------------";
+		DebugDialog::stream() << "Running command(listing):";
+		m_simulator->command("listing");
+		DebugDialog::stream() << "-----------------------------------";
+		DebugDialog::stream() << "Running m_simulator->command(bg_run):";
+		m_simulator->resetIsBGThreadRunning();
+		m_elapsedAnimationTimer.start();
+		if(!m_showResultsTimer->isActive())
+			m_elapsedSimTotalTimer.start();
+		m_simulator->command("bg_run");
+		DebugDialog::stream() << "-----------------------------------";
+		DebugDialog::stream() << "Generating a hash table to find the net of specific connectors:";
+		//While the spice simulator runs, we will perform some tasks:
+
+		//Generate a hash table to find the net of specific connectors
+		DebugDialog::stream() << "Generate a hash table to find the net of specific connectors";
+		m_connector2netHash.clear();
+		for (int i=0; i<netList.size(); i++) {
+			QList<ConnectorItem *> * net = netList.at(i);
+			foreach (ConnectorItem * ci, *net) {
+				m_connector2netHash.insert(ci, i);
 			}
 		}
-	}
-	DebugDialog::stream() << "-----------------------------------";
-	DebugDialog::stream() << "Removing the items added by the simulator last time it run (smoke, displayed text in multimeters, etc.):";
+		DebugDialog::stream() << "-----------------------------------";
+		DebugDialog::stream() << "Generating a hash table to find the breadboard parts from parts in the schematic view:";
 
-	//Removes the items added by the simulator last time it run (smoke, displayed text in multimeters, etc.)
-	DebugDialog::stream() << "removeSimItems(itemBases);";
-	removeSimItems();
-	DebugDialog::stream() << "-----------------------------------";
-	DebugDialog::stream() << "If there are parts that are not being simulated, grey them out:";
+		//Generate a hash table to find the breadboard parts from parts in the schematic view
+		DebugDialog::stream() << "Generate a hash table to find the breadboard parts from parts in the schematic view";
+		m_sch2bbItemHash.clear();
+		foreach (ItemBase* schPart, rawItemBases) {
+			foreach (QGraphicsItem * bbItem, m_breadboardGraphicsView->scene()->items()) {
+				ItemBase * bbPart = dynamic_cast<ItemBase *>(bbItem);
+				if (!bbPart) continue;
+				if (schPart->id() == bbPart->id()) {
+					m_sch2bbItemHash.insert(schPart, bbPart);
+				}
+			}
+		}
+		DebugDialog::stream() << "-----------------------------------";
+		DebugDialog::stream() << "Removing the items added by the simulator last time it run (smoke, displayed text in multimeters, etc.):";
 
-	//If there are parts that are not being simulated, grey them out
-	DebugDialog::stream() << "greyOutNonSimParts(itemBases);";
-	greyOutNonSimParts(rawItemBases);
-	DebugDialog::stream() << "-----------------------------------";
+		//Removes the items added by the simulator last time it run (smoke, displayed text in multimeters, etc.)
+		DebugDialog::stream() << "removeSimItems(itemBases);";
+		removeSimItems();
+		DebugDialog::stream() << "-----------------------------------";
+		DebugDialog::stream() << "If there are parts that are not being simulated, grey them out:";
 
-	DebugDialog::stream() << "Waiting for simulator thread to stop";
-	int elapsedTime = 0, simTimeOut = 3000; // in ms
-	while (m_simulator->isBGThreadRunning() && elapsedTime < simTimeOut) {
-		QThread::usleep(100);
-		elapsedTime++;
-		//If this a transitory simulation and we have partial results, start the animation
+		//If there are parts that are not being simulated, grey them out
+		DebugDialog::stream() << "greyOutNonSimParts(itemBases);";
+		greyOutNonSimParts(rawItemBases);
+		DebugDialog::stream() << "-----------------------------------";
+
+		DebugDialog::stream() << "Waiting for simulator thread to stop";
+		int elapsedTime = 0, simTimeOut = 3000; // in ms
+		while (m_simulator->isBGThreadRunning() && elapsedTime < simTimeOut) {
+			QThread::usleep(100);
+			elapsedTime++;
+			//If this a transitory simulation and we have partial results, start the animation
+			if (doTransientSimulation) {
+				auto timeInfo = m_simulator->getVecInfo(QString("time").toStdString());
+				if(timeInfo.size() > 0)
+					break;
+			}
+		}
+		DebugDialog::stream() << "-------- SIM END or TRANS SIM WITH PARTIAL RESULTS ------------";
+
+		if (elapsedTime >= simTimeOut) {
+			m_simulator->command("bg_halt");
+			stopSimulation();
+			FMessageBox::warning(m_mainWindow, tr("Simulator Timeout", "dialog title"), tr("The spice simulator did not finish after %1 ms. Aborting simulation.").arg(simTimeOut));
+			return;
+		} else {
+			DebugDialog::stream() << "The spice simulator has finished. ElapsedTime: " << m_elapsedAnimationTimer.elapsed();
+		}
+		DebugDialog::stream() << "-----------------------------------";
+
+		if (m_simulator->errorOccured() ||
+			QString::fromStdString(m_simulator->getLog(true)).toLower().contains("there aren't any circuits loaded")) {
+			//Ngspice found an error, do not continue
+			DebugDialog::stream() << "Fatal error found, stopping the simulation.";
+			removeSimItems();
+			QString errorHint = tr("The simulator gave an error when trying to simulate this circuit. "
+									"Please, check the wiring and try again.");
+			showSimulatorError(nullptr, errorHint, m_spiceNetlist, m_simulator);
+			stopSimulation();
+			return;
+		}
+		DebugDialog::stream() << "No fatal error found, continuing...";
+
+		//m_simulator->command("bg_halt");
+
+		//Delete the pointers
+		foreach (QList<ConnectorItem *> * net, netList) {
+			delete net;
+		}
+		netList.clear();
+
+		//The spice simulation has finished, iterate over each part being simulated and update it (if it is necessary).
+		updateParts(m_itemBases, 0);
+
+		//If this a transitory simulation, set the timer for the animation
 		if (doTransientSimulation) {
-			auto timeInfo = m_simulator->getVecInfo(QString("time").toStdString());
-			if(timeInfo.size() > 0)
-				break;
+			m_previousRenderedStep = 0;
+			m_showResultsTimer->start();
 		}
 	}
-	DebugDialog::stream() << "-------- SIM END or TRANS SIM WITH PARTIAL RESULTS ------------";
-
-	if (elapsedTime >= simTimeOut) {
-		m_simulator->command("bg_halt");
+	catch (const std::exception& e) {
+		DebugDialog::stream() << "Simulation caught std::exception: " << e.what();
+		FMessageBox::warning(nullptr, tr("Simulator Error", "dialog title"), tr("Simulation error: %1").arg(e.what()));
 		stopSimulation();
-		FMessageBox::warning(m_mainWindow, tr("Simulator Timeout", "dialog title"), tr("The spice simulator did not finish after %1 ms. Aborting simulation.").arg(simTimeOut));
-		return;
-	} else {
-		DebugDialog::stream() << "The spice simulator has finished. ElapsedTime: " << m_elapsedAnimationTimer.elapsed();
 	}
-	DebugDialog::stream() << "-----------------------------------";
-
-	if (m_simulator->errorOccured() ||
-		QString::fromStdString(m_simulator->getLog(true)).toLower().contains("there aren't any circuits loaded")) {
-		//Ngspice found an error, do not continue
-		DebugDialog::stream() << "Fatal error found, stopping the simulation.";
-		removeSimItems();
-		QString errorHint = tr("The simulator gave an error when trying to simulate this circuit. "
-								"Please, check the wiring and try again.");
-		showSimulatorError(nullptr, errorHint, m_spiceNetlist, m_simulator);
+	catch (const QString& msg) {
+		DebugDialog::stream() << "Simulation caught QString error: " << msg;
+		FMessageBox::warning(nullptr, tr("Simulator Error", "dialog title"), tr("Simulation error: %1").arg(msg));
 		stopSimulation();
-		return;
 	}
-	DebugDialog::stream() << "No fatal error found, continuing...";
-
-	//m_simulator->command("bg_halt");
-
-	//Delete the pointers
-	foreach (QList<ConnectorItem *> * net, netList) {
-		delete net;
+	catch (const std::string& msg) {
+		DebugDialog::stream() << "Simulation caught std::string error: " << QString::fromStdString(msg);
+		FMessageBox::warning(nullptr, tr("Simulator Error", "dialog title"), tr("Simulation error: %1").arg(QString::fromStdString(msg)));
+		stopSimulation();
 	}
-	netList.clear();
-
-
-
-	//The spice simulation has finished, iterate over each part being simulated and update it (if it is necessary).
-	updateParts(m_itemBases, 0);
-
-	//If this a transitory simulation, set the timer for the animation
-	if (doTransientSimulation) {
-		m_previousRenderedStep = 0;
-		m_showResultsTimer->start();
+	catch (...) {
+		DebugDialog::stream() << "Simulation caught unknown exception";
+		FMessageBox::warning(nullptr, tr("Simulator Error", "dialog title"), tr("An unknown error occurred during simulation."));
+		stopSimulation();
 	}
-
 }
 
 
@@ -497,77 +517,98 @@ void Simulator::showSimulatorError(QWidget* parent, const QString& errorHint, co
 }
 
 void Simulator::showSimulationResults() {
-	//Check for critical errors
-	if (m_simulator->errorOccured()) {
-		//Ngspice found a creitical error, do not continue
-		DebugDialog::stream() << "Fatal error found, stopping the simulation.";
+	try {
+		//Check for critical errors
+		if (m_simulator->errorOccured()) {
+			//Ngspice found a creitical error, do not continue
+			DebugDialog::stream() << "Fatal error found, stopping the simulation.";
+			removeSimItems();
+			m_showResultsTimer->stop();
+			QString errorHint = tr("The simulator gave an error when running the simulation of this circuit. "
+								   "Please, check the error. This could be caused by big modifications of the "
+								   "circuit during the simulation or inestability issues. "
+								   "You may try to decrease the timestep of the simulation.");
+			QString errorMsg = QString::fromStdString(m_simulator->getLog(true)).toLower();
+			if (errorMsg.contains("vector") && errorMsg.contains("not found!"))
+				errorHint = tr("The simulator gave an error when running the simulation of this circuit. "
+							   "Please, check the error. This probably has been caused by big modifications of the "
+							   "circuit during the simulation. "
+							   "Please, try again without deleting big parts of your circuit.");
+			showSimulatorError(nullptr, errorHint, m_spiceNetlist, m_simulator);
+			stopSimulation();
+			return;
+		}
+
+		//Check that we have the sim results for this time step
+		auto timeInfo = m_simulator->getVecInfo(QString("time").toStdString());
+		auto elapsedAnimationTime = m_elapsedAnimationTimer.elapsed();
+		m_elapsedAnimationTimer.restart();
+
+		//Calculate the time step to show
+		if (m_showResultsTimerInterval * m_simNumberOfSteps < 0.1) {
+			//Animation time is set to 0. Show simulation result asap
+			m_currSimStep = m_simNumberOfSteps;
+		} else {
+			m_currSimStep = (unsigned int) (m_elapsedSimTotalTimer.elapsed()/ m_showResultsTimerInterval);
+		}
+
+		if ( m_currSimStep > m_interactionStep + timeInfo.size() - 1)
+			m_currSimStep = m_interactionStep + timeInfo.size() - 1;
+		unsigned long localTimeStep = m_currSimStep - m_interactionStep;
+
+		if (m_currSimStep == m_previousRenderedStep )
+			return;
+		m_previousRenderedStep = m_currSimStep;
+
+		DebugDialog::stream() << "showSimulationResults. Time: " <<  m_elapsedSimTotalTimer.elapsed() <<
+			", m_currSimStep: " << m_currSimStep << " simStepsAvailable " << timeInfo.size() << "/" << (m_simNumberOfSteps + 1);
+
+		QElapsedTimer elapsedTimer;
+		elapsedTimer.start();
+
+		//Render current simulation step
 		removeSimItems();
-		m_showResultsTimer->stop();
-		QString errorHint = tr("The simulator gave an error when running the simulation of this circuit. "
-							   "Please, check the error. This could be caused by big modifications of the "
-							   "circuit during the simulation or inestability issues. "
-							   "You may try to decrease the timestep of the simulation.");
-		QString errorMsg = QString::fromStdString(m_simulator->getLog(true)).toLower();
-		if (errorMsg.contains("vector") && errorMsg.contains("not found!"))
-			errorHint = tr("The simulator gave an error when running the simulation of this circuit. "
-						   "Please, check the error. This probably has been caused by big modifications of the "
-						   "circuit during the simulation. "
-						   "Please, try again without deleting big parts of your circuit.");
-		showSimulatorError(nullptr, errorHint, m_spiceNetlist, m_simulator);
+		updateParts(m_itemBases, localTimeStep);
+		double simTime = m_simStartTime + m_currSimStep * m_simStepTime;
+		QString simMessage = QString::number(simTime, 'f', 3) + " s";
+		m_breadboardGraphicsView->setSimulatorMessage(simMessage);
+		m_schematicGraphicsView->setSimulatorMessage(simMessage);
+
+		if (m_currSimStep >= m_simNumberOfSteps) {
+			m_showResultsTimer->stop();
+			m_simulator->command("bg_halt");
+			DebugDialog::stream() << "SIM END. Total time: " << m_elapsedSimTotalTimer.elapsed() << " ms): ";
+			DebugDialog::stream() << "Current Plot: " << m_simulator->getCurrPlot();
+			// DebugDialog::stream() << "All Plots: ";
+			// auto plots = m_simulator->getAllPlots();
+			// for (QString plot: plots)
+			// 	DebugDialog::stream() << plot;
+			// DebugDialog::stream() << "All Vecs: ";
+			// auto vecs = m_simulator->getAllVecs(m_simulator->getCurrPlot().toStdString());
+			// for (QString vec: vecs)
+			// 	DebugDialog::stream() << vec;
+		}
+	}
+	catch (const std::exception& e) {
+		DebugDialog::stream() << "showSimulationResults caught std::exception: " << e.what();
+		FMessageBox::warning(nullptr, tr("Simulator Error", "dialog title"), tr("Simulation error: %1").arg(e.what()));
 		stopSimulation();
-		return;
 	}
-
-	//Check that we have the sim results for this time step
-	auto timeInfo = m_simulator->getVecInfo(QString("time").toStdString());
-	auto elapsedAnimationTime = m_elapsedAnimationTimer.elapsed();
-	m_elapsedAnimationTimer.restart();
-
-	//Calculate the time step to show
-	if (m_showResultsTimerInterval * m_simNumberOfSteps < 0.1) {
-		//Animation time is set to 0. Show simulation result asap
-		m_currSimStep = m_simNumberOfSteps;
-	} else {
-		m_currSimStep = (unsigned int) (m_elapsedSimTotalTimer.elapsed()/ m_showResultsTimerInterval);
+	catch (const QString& msg) {
+		DebugDialog::stream() << "showSimulationResults caught QString: " << msg;
+		FMessageBox::warning(nullptr, tr("Simulator Error", "dialog title"), tr("Simulation error: %1").arg(msg));
+		stopSimulation();
 	}
-
-	if ( m_currSimStep > m_interactionStep + timeInfo.size() - 1)
-		m_currSimStep = m_interactionStep + timeInfo.size() - 1;
-	unsigned long localTimeStep = m_currSimStep - m_interactionStep;
-
-	if (m_currSimStep == m_previousRenderedStep )
-		return;
-	m_previousRenderedStep = m_currSimStep;
-
-	DebugDialog::stream() << "showSimulationResults. Time: " <<  m_elapsedSimTotalTimer.elapsed() <<
-		", m_currSimStep: " << m_currSimStep << " simStepsAvailable " << timeInfo.size() << "/" << (m_simNumberOfSteps + 1);
-
-	QElapsedTimer elapsedTimer;
-	elapsedTimer.start();
-
-	//Render current simulation step
-	removeSimItems();
-	updateParts(m_itemBases, localTimeStep);
-	double simTime = m_simStartTime + m_currSimStep * m_simStepTime;
-	QString simMessage = QString::number(simTime, 'f', 3) + " s";
-	m_breadboardGraphicsView->setSimulatorMessage(simMessage);
-	m_schematicGraphicsView->setSimulatorMessage(simMessage);
-
-	if (m_currSimStep >= m_simNumberOfSteps) {
-		m_showResultsTimer->stop();
-		m_simulator->command("bg_halt");
-		DebugDialog::stream() << "SIM END. Total time: " << m_elapsedSimTotalTimer.elapsed() << " ms): ";
-		DebugDialog::stream() << "Current Plot: " << m_simulator->getCurrPlot();
-		// DebugDialog::stream() << "All Plots: ";
-		// auto plots = m_simulator->getAllPlots();
-		// for (QString plot: plots)
-		// 	DebugDialog::stream() << plot;
-		// DebugDialog::stream() << "All Vecs: ";
-		// auto vecs = m_simulator->getAllVecs(m_simulator->getCurrPlot().toStdString());
-		// for (QString vec: vecs)
-		// 	DebugDialog::stream() << vec;
+	catch (const std::string& msg) {
+		DebugDialog::stream() << "showSimulationResults caught std::string: " << QString::fromStdString(msg);
+		FMessageBox::warning(nullptr, tr("Simulator Error", "dialog title"), tr("Simulation error: %1").arg(QString::fromStdString(msg)));
+		stopSimulation();
 	}
-
+	catch (...) {
+		DebugDialog::stream() << "showSimulationResults caught unknown exception";
+		FMessageBox::warning(nullptr, tr("Simulator Error", "dialog title"), tr("An unknown error occurred during simulation display."));
+		stopSimulation();
+	}
 }
 
 /**
